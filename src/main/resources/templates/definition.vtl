@@ -1,0 +1,27 @@
+<div style="float: right;">
+  <p> add words that fit definition</p>
+
+  <a class="goHome" href="/">back to home</a>
+</div>
+
+<!-- display definition -->
+<span>definition: </span>
+<h1 class="definitionHeader">$definition.getDescription()</h1>
+
+<!-- words which it fits (synonymArray)  -->
+#if ($definition.getSynonymArray().size() > 0)
+  <p>words this definition fits: </p>
+  <ul>
+    #foreach ($synonym in $definition.getSynonymArray())
+      <li><a class="wordSynonyms" href="/thisWord/$synonym.getId()">$synonym.getName()</a></li>
+    #end
+  </ul>
+#end
+
+<!-- add new word that the definition fits -->
+<form id="definitionWordForm" action="/thisDefinition/$definition.getId()">
+  <button id="definitionWordSubmition" form="definitionWordForm" type="submit" style="display: none;">Add word: </button>
+  <label>add word: <input class="wordInput" type="text" name="inWord"></label>
+</form>
+
+<!-- list words, with input to add this definition to them? -->
