@@ -26,8 +26,8 @@ public class Word {
     return definitionArray;
   }
 
-  public ArrayList<Word> getSynonyms(Definition definition){
-    return definition.getSynonymArray();
+  public void clearDefinitionArray() {
+    definitionArray.clear();
   }
 
   public static Word findWord(int id) {
@@ -47,19 +47,27 @@ public class Word {
     wordArray.clear();
   }
 
+  public void addDef(Definition definition){
+    //when added to definitionArray, setDefId to definitionArray.size()
+    definition.setDefId(this); //I want "this" to be the instance of Word, but I dunno if it will even be nessisary.
+    definitionArray.add(definition);
+  }
 
-  // // currently causes more problems than it is worth
+
+  // // currently useless
+
+  // public ArrayList<Word> getSynonyms(Definition definition){
+  //   return definition.getSynonymArray();
+  // }
+
+
   // public Word(String name, Definition definition){
   //   mName = name;
   //   wordArray.add(this)
   //   definitionArray.add(Defiinition);
   // }
 
-  // public void addDef(Definition definition){
-  //   //when added to definitionArray, setDefId to definitionArray.size()
-  //   definition.setDefId(this); //I want "this" to be the instance of Word, but I dunno if it will even be nessisary.
-  //   definitionArray.add(definition);
-  // }
+
   //
   // //find definition
   // public Definition findDefinition(int defID){

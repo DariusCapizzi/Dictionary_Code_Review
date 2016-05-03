@@ -12,7 +12,7 @@ public class WordTest {
 
 
   @Test
-  public void all_returnsAllInstancesOfWord_true() {
+  public void getWordArray_returnsAllInstancesOfWord_true() {
     Word firstWord = new Word("fire");
     Word secondWord = new Word("water");
     assertTrue(secondWord.getWordArray().contains(firstWord));
@@ -20,24 +20,42 @@ public class WordTest {
   }
 
   @Test
-  public void clear_emptiesAllWordsFromArrayList_0() {
-    Word myWord = new Word("Mow the lawn");
+  public void clearWordArray_emptiesAllWordsFromArrayList_0() {
+    Word myWord = new Word("fire");
     Word.clearWordArray();
     assertEquals(Word.getWordArray().size(), 0);
   }
-  //
-  // @Test
-  // public void getId_WordsInstantiateWithAnID_1() {
-  //   Word.clear();  // THIS TEST WILL FAIL WITHOUT THIS LINE!
-  //   Word myWord = new Word("Mow the lawn");
-  //   assertEquals(0, myWord.getId());
-  // }
-  //
-  // @Test
-  // public void find_returnsWordWithSameId_secondWord() {
-  //   Word.clear();
-  //   Word firstWord = new Word("Mow the lawn");
-  //   Word secondWord = new Word("Buy groceries");
-  //   assertEquals(Word.find(secondWord.getId()), secondWord);
-  // }
+
+  @Test
+  public void getId_WordsInstantiateWithAnID_0() {
+    Word.clearWordArray();
+    Word myWord = new Word("fire");
+    assertEquals(0, myWord.getId());
+  }
+
+  @Test
+  public void findWord_returnsWordWithSameId_secondWord() {
+    Word.clearWordArray();
+    Word firstWord = new Word("fire");
+    Word secondWord = new Word("water");
+    assertEquals(Word.findWord(secondWord.getId()), secondWord);
+  }
+
+  @Test
+  public void addDef_addsDefinitionToDefinitionArray_0() {
+    Word.clearWordArray();
+    Word myWord = new Word("fire");
+    Definition myDef = new Definition("is hot");
+    myWord.addDef(myDef);
+    assertEquals(1, myWord.getDefinitions().size());
+  }
+
+  @Test
+  public void clearDefinitionArray_emptiesAllWordsFromArrayList_0() {
+    Word myWord = new Word("fire");
+    Definition myDef = new Definition("is hot");
+    myWord.addDef(myDef);
+    myWord.clearDefinitionArray();
+    assertEquals(0 , myWord.getDefinitions().size());
+  }
 }
