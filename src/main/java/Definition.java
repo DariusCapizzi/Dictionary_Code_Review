@@ -2,7 +2,9 @@ import java.util.ArrayList;
 
 public class Definition {
 
+  //used to find definitions in active memory
   public static ArrayList<Definition> definitionArray =  new ArrayList<Definition>();
+  //used to relate words by definition
   private ArrayList<Word> synonymArray = new ArrayList<Word>();
 
   private String mDescription;
@@ -15,6 +17,9 @@ public class Definition {
     definitionArray.add(this);
   }
 
+  public static ArrayList<Definition> getDefinitionArray(){
+    return definitionArray;
+  }
   public static Definition findDef(int id) {
     try {
       return definitionArray.get(id);
@@ -22,6 +27,10 @@ public class Definition {
       System.out.println(e);
       return null;
     }
+  }
+
+  public static void clearDefinitionArray(){
+     definitionArray.clear();
   }
 
   public String getDescription(){
@@ -43,5 +52,10 @@ public class Definition {
   public void addSynonym(Word synonym){
     synonymArray.add(synonym);
   }
+
+  public void clearSynonyms(){
+    synonymArray.clear();
+  }
+
 
 }

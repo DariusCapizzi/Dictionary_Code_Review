@@ -2,7 +2,9 @@ import java.util.ArrayList;
 
 public class Word {
 
+  //used to find words in active memory
   public static ArrayList<Word> wordArray =  new ArrayList<Word>();
+  //used to relate definitions to a word
   public ArrayList<Definition> definitionArray =  new  ArrayList<Definition>();
   private String mName;
   private int mId;
