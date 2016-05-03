@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DefinitionTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-05-03T15:55:29" hostname="epicodus-41.local" time="0.001">
+<testsuite name="DefinitionTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-05-03T16:07:47" hostname="epicodus-41.local" time="0.001">
   <properties/>
-  <testcase name="getId_DefinitionsInstantiateWithAnID_0" classname="DefinitionTest" time="0.0"/>
+  <testcase name="getId_DefinitionsInstantiateWithAnID_0" classname="DefinitionTest" time="0.001"/>
   <testcase name="clearDefinitionArray_emptiesAllDefinitionsFromArrayList_0" classname="DefinitionTest" time="0.0"/>
   <testcase name="clearSynonyms_emptiesAllDefinitionsFromArrayList_0" classname="DefinitionTest" time="0.0"/>
   <testcase name="getDefinitionArray_returnsAllInstancesOfDefinition_true" classname="DefinitionTest" time="0.0"/>

@@ -28,4 +28,29 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Make a dictionary!");
   }
 
+  @Test
+  public void wordIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    fill("#initalWord").with("fire");
+    submit("#wordSubmition");
+    assertThat(pageSource()).contains("fire");
+  }
+
+  @Test
+  public void defIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    fill("#initalDef").with("is hot");
+    submit("#defSubmition");
+    assertThat(pageSource()).contains("is hot");
+  }
+
+  @Test
+  public void defAndWordIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    fill("#dualInputWord").with("fire");
+    fill("#dualInputDef").with("is hot");
+    submit("#fullSubmition");
+    assertThat(pageSource()).contains("fire");
+  }
+
 }

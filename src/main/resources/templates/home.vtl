@@ -8,7 +8,7 @@
   <h3>Submit Word or Definition: </h3>
   <!-- goes to page that only requires word(word.vtl) -->
   <form action="/newWord" id="wordForm">
-    <label><input class="wordInput" type="text" name="inWord"></label>
+    <label><input id="initalWord" class="wordInput" type="text" name="inWord"></label>
     <button id="wordSubmition" form="wordForm" type="submit">make word</button>
   </form>
 
@@ -19,7 +19,7 @@
     <button id="defSubmition" form="definitionForm" type="submit">make definition</button>
     <br>
     <!-- TODO radio buttons for typeOfWord (eg. verb, noun) -->
-    <label><textarea rows="4" cols="50" class="definitionInput" type="text" name="inDef"></textarea></label>
+    <label><textarea rows="4" cols="50" id="initalDef" class="definitionInput" type="text" name="inDef"></textarea></label>
 
 
   </form>
@@ -30,11 +30,11 @@
   <h3>submit full word:</h3>
   <!-- goes to this page, with newWord added to words (session storage) -->
   <form action="/" id="fullForm">
-    <label> word: <input class="wordInput" type="text" name="inWord"></label>
+    <label> word: <input id="dualInputWord" class="wordInput" type="text" name="inWord"></label>
     <br>
-    
+
     <!-- TODO radio buttons for typeOfWord (eg. verb, noun) -->
-    <label> definition: <br><textarea rows="4" cols="50" class="definitionInput" type="text" name="inDef"></textarea></label>
+    <label> definition: <br><textarea rows="4" cols="50" id="dualInputDef" class="definitionInput" type="text" name="inDef"></textarea></label>
     <br>
     <br>
     <button id="fullSubmition" type="submit">save word and definition</button>
