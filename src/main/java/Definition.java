@@ -3,10 +3,8 @@ import java.util.ArrayList;
 public class Definition {
 
   public static ArrayList<Definition> definitionArray =  new ArrayList<Definition>();
-  //array of words. that this definition fits.
   private ArrayList<Word> synonymArray = new ArrayList<Word>();
 
-  //TODO add typeOfWord property
   private String mDescription;
   private int mDefId;
   private int mId;
@@ -17,7 +15,6 @@ public class Definition {
     definitionArray.add(this);
   }
 
-  //find word in wordarray from id (static)
   public static Definition findDef(int id) {
     try {
       return definitionArray.get(id);
@@ -39,7 +36,6 @@ public class Definition {
     return mId;
   }
 
-  //get synonymArray
   public ArrayList<Word> getSynonymArray(){
     return synonymArray;
   }
@@ -48,6 +44,4 @@ public class Definition {
     synonymArray.add(synonym);
   }
 
-  // //get word from synonymArray?
-  // public findSynonym(){}
 }

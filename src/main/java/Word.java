@@ -14,13 +14,6 @@ public class Word {
     wordArray.add(this);
   }
 
-  // // currently causes more problems than it is worth
-  // public Word(String name, Definition definition){
-  //   mName = name;
-  //   wordArray.add(this)
-  //   definitionArray.add(Defiinition);
-  // }
-
   public int getId(){
     return mId;
   }
@@ -33,22 +26,10 @@ public class Word {
     return definitionArray;
   }
 
-  //get synonymArray
   public ArrayList<Word> getSynonyms(Definition definition){
     return definition.getSynonymArray();
   }
 
-  // //find definition
-  // public Definition findDefinition(int defID){
-  //   try {
-  //     return definitionArray.get(defId);
-  //   } catch (IndexOutOfBoundsException e) {
-  //     System.out.println(e);
-  //     return null;
-  //   }
-  // }
-
-  //find word in wordarray from id (static)
   public static Word findWord(int id) {
     try {
       return wordArray.get(id);
@@ -62,12 +43,32 @@ public class Word {
     return wordArray;
   }
 
-
-
-  public void addDef(Definition definition){
-    //when added to definitionArray, setDefId to definitionArray.size()
-    definition.setDefId(this); //I want "this" to be the instance of Word, but I dunno if it will even be nessisary.
-    definitionArray.add(definition);
+  public static void clearWordArray() {
+    wordArray.clear();
   }
+
+
+  // // currently causes more problems than it is worth
+  // public Word(String name, Definition definition){
+  //   mName = name;
+  //   wordArray.add(this)
+  //   definitionArray.add(Defiinition);
+  // }
+
+  // public void addDef(Definition definition){
+  //   //when added to definitionArray, setDefId to definitionArray.size()
+  //   definition.setDefId(this); //I want "this" to be the instance of Word, but I dunno if it will even be nessisary.
+  //   definitionArray.add(definition);
+  // }
+  //
+  // //find definition
+  // public Definition findDefinition(int defID){
+  //   try {
+  //     return definitionArray.get(defId);
+  //   } catch (IndexOutOfBoundsException e) {
+  //     System.out.println(e);
+  //     return null;
+  //   }
+  // }
 
 }
